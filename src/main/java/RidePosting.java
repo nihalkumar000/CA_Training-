@@ -1,18 +1,20 @@
 package main.java;
-import main.java.Ride;
 
 public class RidePosting {
-
-	public String SaveRide(Ride ride){
-		if(ride != null)
-				return "Post was successful." ;
-		//else
-			
-				return "Post was unsuccessful";
+	public String createRider(Ride ride){
+		return null;
 		
 	}
-	public RidePosting() {
-		// TODO Auto-generated constructor stub
-	}
 
+	public String SaveRide(Ride ride) {
+		if (ride != null) {
+			if (ride.getEmployeeName().equals("")){
+				return "Username Can't Be Empty.";
+			}
+			return "Post was successful.";
+		} else {
+			return "Post was unsuccessful.";
+
+		}
+	}
 }
