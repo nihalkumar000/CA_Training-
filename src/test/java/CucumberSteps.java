@@ -1,5 +1,6 @@
 package test.java;
 import junit.framework.TestCase;
+import main.java.Person;
 import main.java.Ride;
 import main.java.RidePosting;
 import main.java.loginCheck;
@@ -11,6 +12,7 @@ import cucumber.api.java.en.When;
 public class CucumberSteps extends TestCase{
 	Ride ride = new Ride();
 	String actionButton;
+	Person details = new Person();
 	@Given("^user has entered valid data$")
 	public void user_has_entered_valid_data() throws Throwable {
 	    // Express the Regexp above with the code you wish you had
@@ -43,7 +45,7 @@ public class CucumberSteps extends TestCase{
 
 
 	@When("^click on \"([^\"]*)\"$")
-	public void click_on(String buttonName) throws Throwable {
+	public void click_on1(String buttonName) throws Throwable {
 	    // Express the Regexp above with the code you wish you had
 //	    throw new PendingException();
 		actionButton = buttonName;
@@ -79,13 +81,7 @@ public class CucumberSteps extends TestCase{
 		actionButton=arg1;
 	}
 
-	@Then("^system should display a message \"([^\"]*)\"$")
-	public void system_should_display_a_message(String arg1) throws Throwable {
-	    // Express the Regexp above with the code you wish you had
-	    //throw new PendingException();
-		RidePosting posting = new RidePosting();
-		assertEquals(arg1,posting.SaveRide(ride)); 
-	}
+
 
 	
 	@Given("^user has entered valid username and password$")
